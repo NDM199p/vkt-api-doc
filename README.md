@@ -138,10 +138,13 @@ GET /wp-json/custom-user/v1/sanpham-whislist
 
 - Cookie: Authentication is handled via cookies.
 
-## Parameters
+## GET Parameters
 
 - limit (optional): Number of items to retrieve per page (default: 10).
 - page (optional): Page number for pagination (default: 1).
+
+example: /wp-json/custom-user/v1/sanpham-whislist?page=1&limit=3
+
 
 ## Response
 
@@ -213,6 +216,8 @@ GET /wp-json/custom-user/v1/sanpham-download
 - limit (optional): Number of items to retrieve per page (default: 10).
 - page (optional): Page number for pagination (default: 1).
 
+  example: /wp-json/custom-user/v1/sanpham-download?page=1&limit=3
+
 ## Response
 
 ### Success Response:
@@ -278,12 +283,7 @@ POST /wp-json/custom-user/v1/update-password
 
 Cookie: Authentication is handled via cookies.
 
-## Parameters
-
-- old_password (required): The current password of the user.
-- new_password (required): The new password to set for the user.
-
-## Request Body
+## Request Body 
 
 ```
 {
@@ -291,6 +291,8 @@ Cookie: Authentication is handled via cookies.
   "new_password": "new_password"
 }
 ```
+- old_password (required): The current password of the user.
+- new_password (required): The new password to set for the user.
 
 ## Response
 
