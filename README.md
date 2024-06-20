@@ -5,6 +5,9 @@ POST /wp-json/custom-user/v1/fl-dmsp
 ## Description
 Add a taxonomy item to the user's repeater field (danh_muc_theo_doi) based on the provided parameters.
 
+## Authencaion
+- Cookie & nonce
+
 ## Request Body
 ```
 {
