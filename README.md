@@ -1,5 +1,67 @@
 # API Documentation
 
+## API Documentation: Retrieve Taxonomy Information for User's Repeater Data
+GET /wp-json/custom-user/v1/fl-dmsp
+## Description
+Retrieve taxonomy information associated with a user's repeater data based on provided parameters like user ID, pagination (page and limit).
+
+Parameters
+user_id (integer, required):
+
+The ID of the user for whom to retrieve taxonomy information.
+page (integer, optional, default: 1):
+
+The page number of results to retrieve (for pagination).
+limit (integer, optional, default: 10):
+
+The maximum number of taxonomy items to retrieve per page (for pagination).
+## Response
+### Success Response:
+
+Status: 200 OK
+```
+{
+  "status": "success",
+  "message": "Taxonomy information retrieved successfully.",
+  "data": [
+    {
+      "term_id": 1,
+      "name": "Category 1"
+    },
+    {
+      "term_id": 2,
+      "name": "Category 2"
+    },
+    // Additional taxonomy items as per pagination
+  ],
+  "page": 1,
+  "limit": 10
+}
+```
+### Error Responses:
+
+Status: 400 Bad Request
+```
+{
+  "status": "error",
+  "message": "Invalid user ID provided."
+}
+```
+Status: 404 Not Found
+```
+{
+  "status": "error",
+  "message": "User does not exist."
+}
+```
+Status: 500 Internal Server Error
+```
+{
+  "status": "error",
+  "message": "Failed to retrieve repeater data."
+}
+```
+
 # UPDATE INFO USER
 
 POST /wp-json/custom-user/v1/update-info
