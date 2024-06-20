@@ -1,5 +1,68 @@
 # API Documentation
 
+# API Documentation: Add Taxonomy Item to User's Repeater Field
+POST /wp-json/custom-user/v1/fl-dmsp
+## Description
+Add a taxonomy item to the user's repeater field (danh_muc_theo_doi) based on the provided parameters.
+
+## Request Body
+```
+{
+  "taxonomy_item": 123
+}
+```
+- taxonomy_item (integer, required):
+The ID of the taxonomy item to add to the user's repeater field (danh_muc_theo_doi).
+## Response
+### Success Response:
+
+Status: 200 OK
+```
+{
+  "status": "success",
+  "message": "Taxonomy item added successfully",
+  "data": [
+    {
+      "danh_muc_san_pham": 123
+    },
+    // Additional taxonomy items in the repeater field
+  ]
+}
+```
+- status (string): Indicates the outcome of the operation (success).
+- message (string): Description of the operation result.
+- data (array): Array containing the updated user's repeater field (danh_muc_theo_doi) including the newly added taxonomy item.
+### Error Responses:
+
+Status: 400 Bad Request
+```
+{
+  "status": "error",
+  "message": "Missing parameters"
+}
+```
+Status: 404 Not Found
+```
+{
+  "status": "error",
+  "message": "Taxonomy item not found"
+}
+```
+Status: 400 Bad Request
+```
+{
+  "status": "error",
+  "message": "Taxonomy ID already exists in the repeater field."
+}
+```
+Status: 500 Internal Server Error
+```
+{
+  "status": "error",
+  "message": "Failed to update the repeater field"
+}
+```
+
 ## API Documentation: Retrieve Taxonomy Information for User's Repeater Data
 GET /wp-json/custom-user/v1/fl-dmsp
 ## Description
