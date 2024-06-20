@@ -5,14 +5,14 @@ GET /wp-json/custom-user/v1/fl-dmsp
 ## Description
 Retrieve taxonomy information associated with a user's repeater data based on provided parameters like user ID, pagination (page and limit).
 
-Parameters
-user_id (integer, required):
+## Parameters
+- user_id (integer, required):
 
 The ID of the user for whom to retrieve taxonomy information.
-page (integer, optional, default: 1):
+- page (integer, optional, default: 1):
 
 The page number of results to retrieve (for pagination).
-limit (integer, optional, default: 10):
+- limit (integer, optional, default: 10):
 
 The maximum number of taxonomy items to retrieve per page (for pagination).
 ## Response
